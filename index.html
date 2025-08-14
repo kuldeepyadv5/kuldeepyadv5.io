@@ -1,73 +1,171 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuldeep Gothwal - Software Developer</title>
+    <title>Kuldeep Gothwal - Gen AI Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Added Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
-                        accent: '#f59e0b'
+                        primary: '#c02425',
+                        secondary: '#8b1a1b',
+                        accent: '#ff5722'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Source Sans Pro', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'neural': 'neural 4s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        neural: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.7' },
+                            '50%': { transform: 'scale(1.1)', opacity: '1' }
+                        }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Added custom CSS for advanced animations */
+        .neural-network {
+            background: linear-gradient(45deg, #c02425, #ff5722);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .code-rain {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .code-rain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s linear infinite;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(192, 36, 37, 0.2);
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-body">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="bg-white/95 backdrop-blur-sm shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold text-primary">Kuldeep Gothwal</div>
+                <!-- Updated logo with display font and AI theme -->
+                <div class="text-2xl font-bold text-primary font-display">
+                    <span class="relative">
+                        Kuldeep Gothwal
+                        <div class="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
+                    </span>
+                </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition duration-300">About</a>
-                    <a href="#experience" class="text-gray-700 hover:text-primary transition duration-300">Experience</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary transition duration-300">Projects</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
+                    <a href="#home" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition duration-300 font-medium">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Experience</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Contact</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary transition duration-300">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm border-t">
             <div class="px-4 py-2 space-y-2">
-                <a href="#home" class="block text-gray-700 hover:text-primary py-2">Home</a>
-                <a href="#about" class="block text-gray-700 hover:text-primary py-2">About</a>
-                <a href="#experience" class="block text-gray-700 hover:text-primary py-2">Experience</a>
-                <a href="#projects" class="block text-gray-700 hover:text-primary py-2">Projects</a>
-                <a href="#contact" class="block text-gray-700 hover:text-primary py-2">Contact</a>
+                <a href="#home" class="block text-gray-700 hover:text-primary py-2 font-medium">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-primary py-2 font-medium">About</a>
+                <a href="#experience" class="block text-gray-700 hover:text-primary py-2 font-medium">Experience</a>
+                <a href="#projects" class="block text-gray-700 hover:text-primary py-2 font-medium">Projects</a>
+                <a href="#contact" class="block text-gray-700 hover:text-primary py-2 font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-20 pb-16 bg-gradient-to-br from-primary to-secondary text-white">
-        <div class="max-w-6xl mx-auto px-4 py-20">
+    <!-- Completely redesigned hero with AI theme and red gradient -->
+    <section id="home" class="pt-20 pb-16 neural-network text-white code-rain min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Kuldeep Gothwal</h1>
-                    <h2 class="text-xl md:text-2xl mb-6 text-blue-100">Software Developer</h2>
-                    <p class="text-lg mb-8 text-blue-50">Specializing in Python/Django, AWS Lambda, and AI-powered platforms. Building scalable solutions that transform data into actionable business intelligence.</p>
+                <div class="md:w-1/2 mb-8 md:mb-0 animate-slide-up">
+                    <div class="mb-4">
+                        <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                            <i class="fas fa-robot mr-2"></i>Gen AI Developer
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Kuldeep Gothwal</h1>
+                    <h2 class="text-xl md:text-2xl mb-6 text-red-100 font-display">Innovating Tomorrow's AI with Python</h2>
+                    <p class="text-lg mb-8 text-red-50 leading-relaxed">Passionate about harnessing the power of AI and machine learning. Specializing in Python/Django, AWS Lambda, and RAG systems to build scalable, intelligent solutions that transform data into actionable business intelligence.</p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="bg-accent hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">Get In Touch</a>
-                        <a href="/resume.pdf" class="border-2 border-white hover:bg-white hover:text-primary text-white px-6 py-3 rounded-lg font-semibold transition duration-300">Download Resume</a>
+                        <a href="#contact" class="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition duration-300 transform hover:scale-105 ai-glow">
+                            <i class="fas fa-rocket mr-2"></i>Let's Collaborate
+                        </a>
+                        <a href="/resume.pdf" class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded-lg font-semibold transition duration-300 backdrop-blur-sm">
+                            <i class="fas fa-download mr-2"></i>Download Resume
+                        </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="w-64 h-64 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <img src="/placeholder.svg?height=200&width=200" alt="Kuldeep Gothwal" class="w-48 h-48 rounded-full object-cover">
+                <div class="md:w-1/2 flex justify-center animate-fade-in">
+                    <!-- Enhanced profile section with AI-themed design -->
+                    <div class="relative">
+                        <div class="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm animate-float relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 animate-neural rounded-full"></div>
+                            <img src="/placeholder.svg?height=280&width=280" alt="Kuldeep Gothwal - AI Developer" class="w-64 h-64 rounded-full object-cover relative z-10">
+                        </div>
+                        <!-- AI-themed floating elements -->
+                        <div class="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-pulse-slow opacity-80"></div>
+                        <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-white rounded-full animate-pulse-slow opacity-60"></div>
+                        <div class="absolute top-1/2 -left-8 w-4 h-4 bg-accent/60 rounded-full animate-float"></div>
                     </div>
                 </div>
             </div>
@@ -77,22 +175,23 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">About Me</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Passionate about harnessing the power of AI and machine learning to build scalable, intelligent solutions.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Professional Summary</h3>
+                <div class="animate-slide-up">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 font-display">Professional Summary</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Software developer specializing in Python/Django, AWS Lambda, and RAG systems for AI-powered platforms. 
+                        Gen AI developer specializing in Python/Django, AWS Lambda, and RAG systems for AI-powered platforms. 
                         Currently working at Kaitongo, building scalable solutions that transform data into actionable business intelligence.
                     </p>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Experienced in both modern AI/ML technologies and traditional backend development (Laravel/PHP) across 
-                        OTA, CRM, and professional services.
+                        Experienced in both modern AI/ML technologies and traditional backend development, with expertise in 
+                        LangChain, OpenAI embeddings, and vector databases for intelligent applications.
                     </p>
-                    <div class="flex items-center space-x-4 text-gray-600">
+                    <div class="flex items-center space-x-6 text-gray-600">
                         <div class="flex items-center">
                             <i class="fas fa-map-marker-alt text-primary mr-2"></i>
                             <span>Gurugram, India</span>
@@ -104,25 +203,26 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-code text-3xl text-primary mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2">Backend Development</h4>
-                        <p class="text-sm text-gray-600">Python, Django, Laravel, PHP</p>
+                    <!-- Updated skill cards with AI focus and hover effects -->
+                    <div class="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg text-center hover-lift group">
+                        <i class="fas fa-brain text-3xl text-primary mb-4 group-hover:animate-pulse"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2 font-display">AI/ML Development</h4>
+                        <p class="text-sm text-gray-600">Python, LangChain, OpenAI, RAG</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-robot text-3xl text-primary mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2">AI/ML</h4>
-                        <p class="text-sm text-gray-600">LangChain, OpenAI, RAG Systems</p>
+                    <div class="bg-gradient-to-br from-accent/5 to-accent/10 p-6 rounded-lg text-center hover-lift group">
+                        <i class="fas fa-robot text-3xl text-accent mb-4 group-hover:animate-pulse"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2 font-display">Backend Systems</h4>
+                        <p class="text-sm text-gray-600">Django, Laravel, FastAPI</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-cloud text-3xl text-primary mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2">Cloud Services</h4>
+                    <div class="bg-gradient-to-br from-primary/5 to-accent/10 p-6 rounded-lg text-center hover-lift group">
+                        <i class="fas fa-cloud text-3xl text-primary mb-4 group-hover:animate-pulse"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2 font-display">Cloud & DevOps</h4>
                         <p class="text-sm text-gray-600">AWS Lambda, S3, Docker</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-database text-3xl text-primary mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2">Databases</h4>
-                        <p class="text-sm text-gray-600">PostgreSQL, MySQL, MongoDB</p>
+                    <div class="bg-gradient-to-br from-accent/5 to-primary/10 p-6 rounded-lg text-center hover-lift group">
+                        <i class="fas fa-database text-3xl text-accent mb-4 group-hover:animate-pulse"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2 font-display">Vector Databases</h4>
+                        <p class="text-sm text-gray-600">PostgreSQL, MongoDB, Pinecone</p>
                     </div>
                 </div>
             </div>
@@ -133,46 +233,56 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Technical Skills</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Technical Arsenal</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4">Cutting-edge technologies for intelligent solutions</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-semibold text-gray-800 mb-4">Programming</h3>
+                <!-- Enhanced skill cards with red theme and animations -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-primary">
+                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
+                        <i class="fas fa-code text-primary mr-2"></i>Programming
+                    </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">JavaScript</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">PHP</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Java</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">SQL</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">Python</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">JavaScript</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">PHP</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">Java</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">SQL</span>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-semibold text-gray-800 mb-4">AI/ML & Frameworks</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-accent">
+                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
+                        <i class="fas fa-brain text-accent mr-2"></i>AI/ML & Frameworks
+                    </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Django</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">LangChain</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">OpenAI GPT</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">RAG Systems</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">Django</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">LangChain</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">OpenAI GPT</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">RAG Systems</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">Laravel</span>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-semibold text-gray-800 mb-4">Databases</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-green-500">
+                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
+                        <i class="fas fa-database text-green-500 mr-2"></i>Databases
+                    </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">MySQL</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">MongoDB</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Vector DB</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">PostgreSQL</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">MySQL</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">MongoDB</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">Vector DB</span>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-semibold text-gray-800 mb-4">Cloud & Tools</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-blue-500">
+                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
+                        <i class="fas fa-cloud text-blue-500 mr-2"></i>Cloud & Tools
+                    </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">AWS</span>
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Docker</span>
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Git</span>
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Firebase</span>
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">AWS</span>
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">Docker</span>
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">Git</span>
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">Firebase</span>
                     </div>
                 </div>
             </div>
@@ -364,62 +474,69 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+    <!-- Updated contact section with red gradient and modern styling -->
+    <section id="contact" class="py-20 neural-network text-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <h2 class="text-4xl font-bold mb-4 font-display">Let's Build the Future Together</h2>
                 <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-                <p class="text-xl text-blue-100">Let's discuss how we can work together</p>
+                <p class="text-xl text-red-100">Ready to innovate with AI? Let's discuss your next project</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-2xl text-accent mr-4"></i>
+                <div class="animate-slide-up">
+                    <h3 class="text-2xl font-semibold mb-6 font-display">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center group">
+                            <div class="bg-accent p-3 rounded-full mr-4 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
                             <div>
                                 <p class="font-medium">Email</p>
-                                <a href="mailto:kuldeepgothwal03@gmail.com" class="text-blue-100 hover:text-white transition duration-300">kuldeepgothwal03@gmail.com</a>
+                                <a href="mailto:kuldeepgothwal03@gmail.com" class="text-red-100 hover:text-white transition duration-300">kuldeepgothwal03@gmail.com</a>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone text-2xl text-accent mr-4"></i>
+                        <div class="flex items-center group">
+                            <div class="bg-accent p-3 rounded-full mr-4 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
                             <div>
                                 <p class="font-medium">Phone</p>
-                                <a href="tel:+919671116213" class="text-blue-100 hover:text-white transition duration-300">+91 9671116213</a>
+                                <a href="tel:+919671116213" class="text-red-100 hover:text-white transition duration-300">+91 9671116213</a>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-2xl text-accent mr-4"></i>
+                        <div class="flex items-center group">
+                            <div class="bg-accent p-3 rounded-full mr-4 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
                             <div>
                                 <p class="font-medium">Location</p>
-                                <p class="text-blue-100">Gurugram, India</p>
+                                <p class="text-red-100">Gurugram, India</p>
                             </div>
                         </div>
                     </div>
                     <div class="flex space-x-4 mt-8">
-                        <a href="https://linkedin.com/in/kuldeep-gothwal" class="bg-white/10 hover:bg-white/20 p-3 rounded-full transition duration-300">
+                        <a href="https://linkedin.com/in/kuldeep-gothwal" class="bg-white/10 hover:bg-accent p-4 rounded-full transition duration-300 transform hover:scale-110 backdrop-blur-sm">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://github.com/Kuldeep140320" class="bg-white/10 hover:bg-white/20 p-3 rounded-full transition duration-300">
+                        <a href="https://github.com/Kuldeep140320" class="bg-white/10 hover:bg-accent p-4 rounded-full transition duration-300 transform hover:scale-110 backdrop-blur-sm">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                     </div>
                 </div>
-                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
-                    <h3 class="text-2xl font-semibold mb-6">Send Message</h3>
-                    <form class="space-y-4">
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm hover-lift">
+                    <h3 class="text-2xl font-semibold mb-6 font-display">Start a Conversation</h3>
+                    <form class="space-y-6">
                         <div>
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-100 focus:outline-none focus:border-accent transition duration-300">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-100 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition duration-300 backdrop-blur-sm">
                         </div>
                         <div>
-                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-100 focus:outline-none focus:border-accent transition duration-300">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-100 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition duration-300 backdrop-blur-sm">
                         </div>
                         <div>
-                            <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-100 focus:outline-none focus:border-accent transition duration-300 resize-none"></textarea>
+                            <textarea rows="4" placeholder="Tell me about your AI project..." class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-100 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition duration-300 resize-none backdrop-blur-sm"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-accent hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition duration-300">
-                            Send Message
+                        <button type="submit" class="w-full bg-accent hover:bg-orange-600 text-white py-4 rounded-lg font-semibold transition duration-300 transform hover:scale-105 ai-glow">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
                         </button>
                     </form>
                 </div>
@@ -431,7 +548,7 @@
     <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p>&copy; 2025 Kuldeep Gothwal. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">Built with passion and modern web technologies</p>
+            <p class="text-gray-400 mt-2">Built with passion for AI innovation and modern web technologies</p>
         </div>
     </footer>
 
@@ -455,19 +572,36 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // Add scroll effect to navigation
+        // Enhanced scroll effects
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.classList.add('bg-white/95', 'backdrop-blur-sm');
+                nav.classList.add('shadow-xl');
             } else {
-                nav.classList.remove('bg-white/95', 'backdrop-blur-sm');
+                nav.classList.remove('shadow-xl');
             }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
