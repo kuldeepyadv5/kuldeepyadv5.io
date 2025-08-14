@@ -6,16 +6,15 @@
     <title>Kuldeep Gothwal - Gen AI Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Added Google Fonts for modern typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#c02425',
-                        secondary: '#8b1a1b',
-                        accent: '#ff5722'
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                        accent: '#06B6D4'
                     },
                     fontFamily: {
                         'display': ['Playfair Display', 'serif'],
@@ -25,8 +24,7 @@
                         'float': 'float 6s ease-in-out infinite',
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'slide-up': 'slideUp 0.8s ease-out',
-                        'fade-in': 'fadeIn 1s ease-out',
-                        'neural': 'neural 4s ease-in-out infinite'
+                        'fade-in': 'fadeIn 1s ease-out'
                     },
                     keyframes: {
                         float: {
@@ -40,10 +38,6 @@
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' }
-                        },
-                        neural: {
-                            '0%, 100%': { transform: 'scale(1)', opacity: '0.7' },
-                            '50%': { transform: 'scale(1.1)', opacity: '1' }
                         }
                     }
                 }
@@ -51,287 +45,248 @@
         }
     </script>
     <style>
-        /* Added custom CSS for advanced animations */
-        .neural-network {
-            background: linear-gradient(45deg, #c02425, #ff5722);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .code-rain {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .code-rain::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-            animation: float 20s linear infinite;
-        }
-        
         .hover-lift {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .hover-lift:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(192, 36, 37, 0.2);
-        }
-        
-        .ai-glow {
-            box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-body">
-    <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur-sm shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <!-- Updated logo with display font and AI theme -->
-                <div class="text-2xl font-bold text-primary font-display">
-                    <span class="relative">
-                        Kuldeep Gothwal
-                        <div class="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
-                    </span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition duration-300 font-medium">About</a>
-                    <a href="#experience" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Experience</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Projects</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300 font-medium">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary transition duration-300">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm border-t">
-            <div class="px-4 py-2 space-y-2">
-                <a href="#home" class="block text-gray-700 hover:text-primary py-2 font-medium">Home</a>
-                <a href="#about" class="block text-gray-700 hover:text-primary py-2 font-medium">About</a>
-                <a href="#experience" class="block text-gray-700 hover:text-primary py-2 font-medium">Experience</a>
-                <a href="#projects" class="block text-gray-700 hover:text-primary py-2 font-medium">Projects</a>
-                <a href="#contact" class="block text-gray-700 hover:text-primary py-2 font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
-    <!-- Completely redesigned hero with AI theme and red gradient -->
-    <section id="home" class="pt-20 pb-16 neural-network text-white code-rain min-h-screen flex items-center">
-        <div class="max-w-6xl mx-auto px-4 py-20 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 animate-slide-up">
-                    <div class="mb-4">
-                        <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
-                            <i class="fas fa-robot mr-2"></i>Gen AI Developer
-                        </span>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Kuldeep Gothwal</h1>
-                    <h2 class="text-xl md:text-2xl mb-6 text-red-100 font-display">Innovating Tomorrow's AI with Python</h2>
-                    <p class="text-lg mb-8 text-red-50 leading-relaxed">Passionate about harnessing the power of AI and machine learning. Specializing in Python/Django, AWS Lambda, and RAG systems to build scalable, intelligent solutions that transform data into actionable business intelligence.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition duration-300 transform hover:scale-105 ai-glow">
-                            <i class="fas fa-rocket mr-2"></i>Let's Collaborate
-                        </a>
-                        <a href="/resume.pdf" class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded-lg font-semibold transition duration-300 backdrop-blur-sm">
-                            <i class="fas fa-download mr-2"></i>Download Resume
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center animate-fade-in">
-                    <!-- Enhanced profile section with AI-themed design -->
-                    <div class="relative">
-                        <div class="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm animate-float relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 animate-neural rounded-full"></div>
-                            <img src="/placeholder.svg?height=280&width=280" alt="Kuldeep Gothwal - AI Developer" class="w-64 h-64 rounded-full object-cover relative z-10">
-                        </div>
-                        <!-- AI-themed floating elements -->
-                        <div class="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-pulse-slow opacity-80"></div>
-                        <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-white rounded-full animate-pulse-slow opacity-60"></div>
-                        <div class="absolute top-1/2 -left-8 w-4 h-4 bg-accent/60 rounded-full animate-float"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section class="bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 text-white py-20">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 animate-slide-up">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">About Me</h2>
-                <div class="w-20 h-1 bg-primary mx-auto"></div>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Passionate about harnessing the power of AI and machine learning to build scalable, intelligent solutions.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-slide-up">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 font-display">Professional Summary</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Gen AI developer specializing in Python/Django, AWS Lambda, and RAG systems for AI-powered platforms. 
-                        Currently working at Kaitongo, building scalable solutions that transform data into actionable business intelligence.
+            <div class="flex flex-col lg:flex-row justify-between items-start">
+                <div class="lg:w-2/3">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-4 font-display">KULDEEP GOTHWAL</h1>
+                    <h2 class="text-xl lg:text-2xl text-gray-300 mb-6 font-display">Gen AI Developer</h2>
+                    <p class="text-gray-300 max-w-2xl leading-relaxed">
+                        Crafting exceptional AI/ML experiences with modern web technologies. 3+ years of 
+                        experience in Python, Django, and responsive design.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Experienced in both modern AI/ML technologies and traditional backend development, with expertise in 
-                        LangChain, OpenAI embeddings, and vector databases for intelligent applications.
-                    </p>
-                    <div class="flex items-center space-x-6 text-gray-600">
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
-                            <span>Gurugram, India</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-primary mr-2"></i>
+                </div>
+                <div class="lg:w-1/3 mt-8 lg:mt-0">
+                    <div class="space-y-4">
+                        <div class="flex items-center text-gray-300">
+                            <i class="fas fa-envelope w-5 mr-3"></i>
                             <span>kuldeepgothwal03@gmail.com</span>
                         </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <!-- Updated skill cards with AI focus and hover effects -->
-                    <div class="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg text-center hover-lift group">
-                        <i class="fas fa-brain text-3xl text-primary mb-4 group-hover:animate-pulse"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2 font-display">AI/ML Development</h4>
-                        <p class="text-sm text-gray-600">Python, LangChain, OpenAI, RAG</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-accent/5 to-accent/10 p-6 rounded-lg text-center hover-lift group">
-                        <i class="fas fa-robot text-3xl text-accent mb-4 group-hover:animate-pulse"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2 font-display">Backend Systems</h4>
-                        <p class="text-sm text-gray-600">Django, Laravel, FastAPI</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-primary/5 to-accent/10 p-6 rounded-lg text-center hover-lift group">
-                        <i class="fas fa-cloud text-3xl text-primary mb-4 group-hover:animate-pulse"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2 font-display">Cloud & DevOps</h4>
-                        <p class="text-sm text-gray-600">AWS Lambda, S3, Docker</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-accent/5 to-primary/10 p-6 rounded-lg text-center hover-lift group">
-                        <i class="fas fa-database text-3xl text-accent mb-4 group-hover:animate-pulse"></i>
-                        <h4 class="font-semibold text-gray-800 mb-2 font-display">Vector Databases</h4>
-                        <p class="text-sm text-gray-600">PostgreSQL, MongoDB, Pinecone</p>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fas fa-phone w-5 mr-3"></i>
+                            <span>+91 9671116213</span>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fas fa-map-marker-alt w-5 mr-3"></i>
+                            <span>Gurugram, India</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="/resume.pdf" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold transition duration-300 inline-flex items-center">
+                                <i class="fas fa-download mr-2"></i>
+                                Download Resume
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Professional Profile -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Professional Profile</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-2/3">
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Gen AI Developer with <strong>3 years of experience</strong>, beginning with a background in web 
+                        design and progressing into modern AI/ML development. Skilled in building 
+                        responsive, accessible, and high-performance intelligent applications using Python, Django, JavaScript, 
+                        HTML, CSS, and related technologies.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Strong understanding of AI/ML processes, with the ability to translate complex concepts into accessible 
+                        production-ready code. Dedicated to government sector projects following GDPR and DRM 
+                        standards.
+                    </p>
+                </div>
+                <div class="lg:w-1/3">
+                    <div class="space-y-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-calendar-alt text-2xl text-primary"></i>
+                            </div>
+                            <div class="text-3xl font-bold text-gray-800">3+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-project-diagram text-2xl text-accent"></i>
+                            </div>
+                            <div class="text-3xl font-bold text-gray-800">50+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-building text-2xl text-green-600"></i>
+                            </div>
+                            <div class="text-3xl font-bold text-gray-800">Government</div>
+                            <div class="text-gray-600">Sector Expertise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Technical Arsenal</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Technical Expertise</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
-                <p class="text-gray-600 mt-4">Cutting-edge technologies for intelligent solutions</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Enhanced skill cards with red theme and animations -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-primary">
-                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
-                        <i class="fas fa-code text-primary mr-2"></i>Programming
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">Python</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">JavaScript</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">PHP</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">Java</span>
-                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-white transition duration-300 cursor-default">SQL</span>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover-lift">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 font-display">Programming & Scripting</h3>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div>Python</div>
+                        <div>JavaScript</div>
+                        <div>PHP</div>
+                        <div>Java</div>
+                        <div>SQL</div>
+                        <div>HTML</div>
+                        <div>CSS</div>
+                        <div>AJAX</div>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-accent">
-                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
-                        <i class="fas fa-brain text-accent mr-2"></i>AI/ML & Frameworks
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">Django</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">LangChain</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">OpenAI GPT</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">RAG Systems</span>
-                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm hover:bg-accent hover:text-white transition duration-300 cursor-default">Laravel</span>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover-lift">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-brain text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 font-display">AI/ML & Styling</h3>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div>Django</div>
+                        <div>LangChain</div>
+                        <div>Flask</div>
+                        <div>OpenAI GPT</div>
+                        <div>RAG Systems</div>
+                        <div>Vector Embeddings</div>
+                        <div>Laravel</div>
+                        <div>Livewire</div>
+                        <div>Bootstrap</div>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-green-500">
-                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
-                        <i class="fas fa-database text-green-500 mr-2"></i>Databases
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">PostgreSQL</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">MySQL</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">MongoDB</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm hover:bg-green-500 hover:text-white transition duration-300 cursor-default">Vector DB</span>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover-lift">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-database text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 font-display">Database & Backend</h3>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div>Vector Databases</div>
+                        <div>PostgreSQL</div>
+                        <div>MySQL</div>
+                        <div>MongoDB</div>
+                        <div>PgAdmin</div>
+                        <div>REST APIs</div>
+                        <div>OpenAI APIs</div>
+                        <div>Google APIs</div>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover-lift border-l-4 border-blue-500">
-                    <h3 class="font-semibold text-gray-800 mb-4 font-display flex items-center">
-                        <i class="fas fa-cloud text-blue-500 mr-2"></i>Cloud & Tools
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">AWS</span>
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">Docker</span>
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">Git</span>
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-500 hover:text-white transition duration-300 cursor-default">Firebase</span>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover-lift">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tools text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 font-display">Development Tools</h3>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div>AWS (Lambda, S3)</div>
+                        <div>Docker</div>
+                        <div>Git</div>
+                        <div>Postman</div>
+                        <div>VS Code</div>
+                        <div>Nginx</div>
+                        <div>Firebase</div>
+                        <div>DigitalOcean</div>
+                        <div>Vercel</div>
+                        <div>Netlify</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-white">
+    <!-- Professional Experience -->
+    <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Work Experience</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Professional Experience</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
             </div>
-            <div class="space-y-12">
-                <!-- Kaitongo -->
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <div>
-                            <h3 class="text-2xl font-semibold text-gray-800">Software Developer</h3>
-                            <h4 class="text-xl text-primary font-medium">Kaitongo Inc</h4>
-                            <p class="text-gray-600">Toronto, Canada</p>
-                        </div>
-                        <div class="text-gray-500 mt-2 md:mt-0">
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Jan 2025 – Present</span>
-                        </div>
+            
+            <!-- Kaitongo -->
+            <div class="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg mb-8">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Software Developer</h3>
+                        <h4 class="text-xl opacity-90">Kaitongo Inc</h4>
                     </div>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-primary mt-1 mr-3"></i>
-                            Developing AI-powered platform using Python/Django, AWS Lambda, and Vector Databases for RAG systems
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-primary mt-1 mr-3"></i>
-                            Building scalable backend solutions with OpenAI embeddings and machine learning workflows for business intelligence
-                        </li>
-                    </ul>
+                    <div class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium mt-4 md:mt-0">
+                        Jan 2025 – Present
+                    </div>
                 </div>
-
-                <!-- Avathi Ventures -->
+                
+                <h5 class="text-lg font-semibold mb-4">Technologies Used</h5>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Python</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">AWS Lambda</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Vector DB</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">RAG Systems</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">OpenAI</span>
+                </div>
+                
+                <h5 class="text-lg font-semibold mb-4">Key Achievements</h5>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle mr-3 mt-1"></i>
+                        <span>Developing AI-powered platform using Python/Django and AWS Lambda</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle mr-3 mt-1"></i>
+                        <span>Building scalable backend solutions with OpenAI embeddings</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle mr-3 mt-1"></i>
+                        <span>Implementing machine learning workflows for business intelligence</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle mr-3 mt-1"></i>
+                        <span>Optimizing Vector Database performance for RAG systems</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Previous experiences in similar card format -->
+            <div class="space-y-8">
                 <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
                         <div>
                             <h3 class="text-2xl font-semibold text-gray-800">Backend Developer</h3>
-                            <h4 class="text-xl text-primary font-medium">Avathi Ventures Private Limited</h4>
+                            <h4 class="text-xl text-primary">Avathi Ventures Private Limited</h4>
                             <p class="text-gray-600">Bengaluru, India</p>
                         </div>
-                        <div class="text-gray-500 mt-2 md:mt-0">
-                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Jan 2024 – Jan 2025</span>
-                        </div>
+                        <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-medium mt-4 md:mt-0">Jan 2024 – Jan 2025</span>
                     </div>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-start">
@@ -344,18 +299,15 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Prism Infoways -->
+                
                 <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
                         <div>
                             <h3 class="text-2xl font-semibold text-gray-800">Full Stack Developer</h3>
-                            <h4 class="text-xl text-primary font-medium">Prism Infoways Private Limited</h4>
+                            <h4 class="text-xl text-primary">Prism Infoways Private Limited</h4>
                             <p class="text-gray-600">Gurugram, India</p>
                         </div>
-                        <div class="text-gray-500 mt-2 md:mt-0">
-                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">Aug 2022 – Jan 2024</span>
-                        </div>
+                        <span class="bg-secondary text-white px-4 py-2 rounded-full text-sm font-medium mt-4 md:mt-0">Aug 2022 – Jan 2024</span>
                     </div>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-start">
@@ -366,179 +318,240 @@
                             <i class="fas fa-chevron-right text-primary mt-1 mr-3"></i>
                             Used Backpack Laravel to develop custom admin panels, improving administrative efficiency by 25%
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-primary mt-1 mr-3"></i>
-                            Built and optimized e-commerce websites with shopping carts, payment gateways, and product catalogs
-                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <!-- Featured Projects -->
+    <section class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Featured Projects</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Content Generator -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="/placeholder.svg?height=200&width=400" alt="Content Generator" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Content Generator for OTA</h3>
-                        <p class="text-gray-600 mb-4">
-                            AI-driven content generator using Python, OpenAI embeddings, and RAG to deliver fast, accurate, 
-                            and customizable research reports for OTA platforms.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">OpenAI</span>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">RAG</span>
-                        </div>
-                        <a href="#" class="inline-flex items-center text-primary hover:text-secondary transition duration-300">
-                            <i class="fab fa-github mr-2"></i>
-                            View on GitHub
+                <div class="bg-gradient-to-br from-blue-500 to-cyan-500 text-white p-8 rounded-lg hover-lift">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Content Generator for OTA</h3>
+                        <i class="fas fa-robot text-3xl opacity-80"></i>
+                    </div>
+                    <p class="mb-6 opacity-90">
+                        Developed an AI-driven content generator enhancing consistency, readability, and 
+                        performance. Integrated accessibility features with first-rate algorithms for optimal 
+                        user experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">OpenAI</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">RAG</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Vector DB</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-white hover:text-cyan-200 transition duration-300">
+                        <i class="fab fa-github mr-2"></i>
+                        View Project
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-8 rounded-lg hover-lift">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Feed Vibes</h3>
+                        <i class="fas fa-newspaper text-3xl opacity-80"></i>
+                    </div>
+                    <p class="mb-6 opacity-90">
+                        Built dynamic React components for blog pages enabling desktop browsing directly 
+                        from functional web applications.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Next.js</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Django</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">AWS S3</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://feedvibes.com" class="inline-flex items-center text-white hover:text-pink-200 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            View Project
                         </a>
                     </div>
                 </div>
-
-                <!-- Feed Vibes -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="/placeholder.svg?height=200&width=400" alt="Feed Vibes" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Feed Vibes</h3>
-                        <p class="text-gray-600 mb-4">
-                            Dynamic blogging and news platform focused on Technology, Business, Health, Lifestyle, Travel, 
-                            and Science, built with Next.js frontend and Django backend.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Next.js</span>
-                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Django</span>
-                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">AWS S3</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="https://feedvibes.com" class="inline-flex items-center text-primary hover:text-secondary transition duration-300">
-                                <i class="fas fa-external-link-alt mr-2"></i>
-                                Live Demo
-                            </a>
-                            <a href="#" class="inline-flex items-center text-primary hover:text-secondary transition duration-300">
-                                <i class="fab fa-github mr-2"></i>
-                                GitHub
-                            </a>
-                        </div>
+                
+                <div class="bg-gradient-to-br from-green-500 to-emerald-500 text-white p-8 rounded-lg hover-lift">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">AI Research Browser</h3>
+                        <i class="fas fa-search text-3xl opacity-80"></i>
                     </div>
+                    <p class="mb-6 opacity-90">
+                        Created complete HTML structure with responsive design and features of optimizing 
+                        for smooth user experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Flask</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">LangChain</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Vector Search</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-white hover:text-emerald-200 transition duration-300">
+                        <i class="fab fa-github mr-2"></i>
+                        View Project
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-500 to-orange-500 text-white p-8 rounded-lg hover-lift">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Intelligent CRM for Biotechnology</h3>
+                        <i class="fas fa-dna text-3xl opacity-80"></i>
+                    </div>
+                    <p class="mb-6 opacity-90">
+                        Designed complete CRM structure according to best pages enabling independent 
+                        implementation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">PHP</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Livewire</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-white hover:text-orange-200 transition duration-300">
+                        <i class="fab fa-github mr-2"></i>
+                        View Project
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education & Certifications -->
     <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Education</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-display">Education & Certifications</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-graduation-cap text-3xl text-primary mr-4"></i>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800">Master of Computer Application</h3>
-                            <p class="text-gray-600">Chandigarh University</p>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Education -->
+                <div class="bg-blue-50 p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Education</h3>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Aug 2021 – Jun 2023</span>
-                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">GPA: 7.80</span>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Master of Computer Application</h4>
+                            <p class="text-gray-600">Chandigarh University</p>
+                            <p class="text-sm text-gray-500">Aug 2021 – Jun 2023</p>
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs">GPA: 7.80</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">B.Tech, Computer Science Engineering</h4>
+                            <p class="text-gray-600">Maharshi Dayanand University</p>
+                            <p class="text-sm text-gray-500">July 2018 - May 2021</p>
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs">CGPA: 6.4</span>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-graduation-cap text-3xl text-primary mr-4"></i>
+                
+                <!-- Certifications -->
+                <div class="bg-green-50 p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Certifications</h3>
+                    </div>
+                    <div class="space-y-4">
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-800">Bachelor of Computer Application</h3>
-                            <p class="text-gray-600">Maharshi Dayanand University, Rohtak</p>
+                            <h4 class="font-semibold text-gray-800">Machine Learning System Administration</h4>
+                            <p class="text-gray-600 text-sm">AWS & AI</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Professional Certification</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Advanced Python for AI/ML</h4>
+                            <p class="text-gray-600 text-sm">Programming Techniques</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Certification Pending</p>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">July 2018 - May 2021</span>
-                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">CGPA: 6.4</span>
+                </div>
+                
+                <!-- Training -->
+                <div class="bg-purple-50 p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-chalkboard-teacher text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Training</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Industry Internship AWS Cloud Computing</h4>
+                            <p class="text-gray-600 text-sm">Chandigarh University</p>
+                            <p class="text-xs text-gray-500">2022</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">React JS Development</h4>
+                            <p class="text-gray-600 text-sm">Online Bootcamp</p>
+                            <p class="text-xs text-gray-500">2023</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">AI & GitHub</h4>
+                            <p class="text-gray-600 text-sm">Chandigarh University</p>
+                            <p class="text-xs text-gray-500">2023</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Web Designing</h4>
+                            <p class="text-gray-600 text-sm">Skill India</p>
+                            <p class="text-xs text-gray-500">2021</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <!-- Updated contact section with red gradient and modern styling -->
-    <section id="contact" class="py-20 neural-network text-white">
+    <!-- Core Strengths -->
+    <section class="py-20 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 text-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 font-display">Let's Build the Future Together</h2>
-                <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-                <p class="text-xl text-red-100">Ready to innovate with AI? Let's discuss your next project</p>
+                <h2 class="text-4xl font-bold mb-4 font-display">Core Strengths</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="animate-slide-up">
-                    <h3 class="text-2xl font-semibold mb-6 font-display">Get In Touch</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-center group">
-                            <div class="bg-accent p-3 rounded-full mr-4 group-hover:scale-110 transition duration-300">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Email</p>
-                                <a href="mailto:kuldeepgothwal03@gmail.com" class="text-red-100 hover:text-white transition duration-300">kuldeepgothwal03@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center group">
-                            <div class="bg-accent p-3 rounded-full mr-4 group-hover:scale-110 transition duration-300">
-                                <i class="fas fa-phone text-white"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Phone</p>
-                                <a href="tel:+919671116213" class="text-red-100 hover:text-white transition duration-300">+91 9671116213</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center group">
-                            <div class="bg-accent p-3 rounded-full mr-4 group-hover:scale-110 transition duration-300">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Location</p>
-                                <p class="text-red-100">Gurugram, India</p>
-                            </div>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-white"></i>
                     </div>
-                    <div class="flex space-x-4 mt-8">
-                        <a href="https://linkedin.com/in/kuldeep-gothwal" class="bg-white/10 hover:bg-accent p-4 rounded-full transition duration-300 transform hover:scale-110 backdrop-blur-sm">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://github.com/Kuldeep140320" class="bg-white/10 hover:bg-accent p-4 rounded-full transition duration-300 transform hover:scale-110 backdrop-blur-sm">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Problem Solving</h3>
+                    <p class="text-gray-300">Analytical thinking and creative solutions for complex AI challenges</p>
                 </div>
-                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm hover-lift">
-                    <h3 class="text-2xl font-semibold mb-6 font-display">Start a Conversation</h3>
-                    <form class="space-y-6">
-                        <div>
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-100 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition duration-300 backdrop-blur-sm">
-                        </div>
-                        <div>
-                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-100 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition duration-300 backdrop-blur-sm">
-                        </div>
-                        <div>
-                            <textarea rows="4" placeholder="Tell me about your AI project..." class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-100 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition duration-300 resize-none backdrop-blur-sm"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-accent hover:bg-orange-600 text-white py-4 rounded-lg font-semibold transition duration-300 transform hover:scale-105 ai-glow">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
-                        </button>
-                    </form>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Active Listening</h3>
+                    <p class="text-gray-300">Understanding client needs and translating them into technical solutions</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Innovation</h3>
+                    <p class="text-gray-300">Staying ahead with cutting-edge AI/ML technologies and methodologies</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tachometer-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Learner</h3>
+                    <p class="text-gray-300">Rapidly adapting to new frameworks and emerging AI technologies</p>
                 </div>
             </div>
         </div>
@@ -553,14 +566,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -572,20 +577,10 @@
                         block: 'start'
                     });
                 }
-                mobileMenu.classList.add('hidden');
             });
         });
 
-        // Enhanced scroll effects
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('shadow-xl');
-            } else {
-                nav.classList.remove('shadow-xl');
-            }
-        });
-
+        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -599,7 +594,6 @@
             });
         }, observerOptions);
 
-        // Observe all sections for animations
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
